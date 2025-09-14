@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="auth-container">
+      @if(isLogInFormVisible){
+      <form [formGroup]="logInForm" class="auth-form">
+            <h2>Log In</h2>
+
+            <label>Email</label>
+            <input type="email" formControlName="email">
+
+            <label>Password</label>
+            <input type="password" formControlName="password">
+
+            <button type="submit">Log In</button>
+
+            <span class="toggle-link" (click)="toggleSignUpForm">Sign Up</span>
+      </form>
+
+      } @else {
+      <form [formGroup]="signUpForm" class="auth-form">
+            <h2>Sign Up</h2>
+            <label>Full Name</label>
+            <input type="text" formControlName="fullName">
+
+            <label>Email</label>
+            <input type="email" formControlName="email">
+
+            <label>Password</label>
+            <input type="password" formControlName="password">
+
+            <label>Confirm Password</label>
+            <input type="password" formControlName="confirmPassword">
+
+            <button type="submit">Sign Up</button>
+            <span class="toggle-link" (click)="toggleSignUpForm">Log In</span>
+      </form>}
+</div>
