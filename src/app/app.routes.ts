@@ -4,6 +4,11 @@ import { AuthEnum } from './enum/auth.enum';
 
 export const routes: Routes = [
       {
+            path: '',
+            redirectTo: AuthEnum.LOGIN,
+            pathMatch: 'full'
+      },
+      {
             path: AuthEnum.LOGIN,
             component: LoginComponent,
             pathMatch: 'full',
